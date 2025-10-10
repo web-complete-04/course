@@ -1,0 +1,28 @@
+body {
+  color: red;
+}
+
+img {
+  float: right;
+  margin-left: 15px;
+  width: 200px;
+  height: 200px;
+}
+
+.divWithFloat {
+  float: left;
+  padding: 15px; 
+}
+
+.divWithFloat1 {
+  background: red;
+  color: white;
+}
+
+.divWithFloat2 {
+  background: yellow;
+}
+
+.divWithFloat3 {
+  background: green;
+}

@@ -1,0 +1,188 @@
+/* main.css */
+p {
+  color: green;
+}
+
+/* hexadecimal colors */
+.hexadecimalColor {
+  color: #59bd75;
+}
+/* RGB colors */
+.rgbColor {
+  color: rgb(89, 189, 117);
+}
+
+/* font-family */
+.fontFamily {
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+/* font-face */
+@font-face {
+  font-family: "Open Sans";
+  src: url("fonts/OpenSans-Regular.ttf");
+}
+.customFont {
+  font-family: "Open Sans";
+}
+
+/* font-size */
+html {
+  font-size: 15px;
+}
+.remFontSizeParent {
+  font-size: 2rem;
+}
+.emFontSizeChild {
+  font-size: 2em;
+}
+
+/* font-style */
+.fontStyle {
+  font-style: italic;
+}
+/* font-weight */
+.fontWeight {
+  font-weight: bold;
+}
+/* text-transform */
+.textTransform {
+  text-transform: uppercase;
+}
+/* text-decoration */
+.textDecoration {
+  text-decoration: underline;
+}
+
+/* font shorthand */
+.fontShorthand {
+  font: italic bold 12px/30px Georgia, serif;
+}
+
+/* text-align */
+.centerAligned {
+  text-align: center;
+}
+
+/* line-height */
+.lineHeight {
+  line-height: 1.6;
+}
+
+/* letter-spacing, word-spacing*/
+.spacedText {
+  letter-spacing: 4px;
+  word-spacing: 4px;
+}
+
+/* word-break */
+.breakAll {
+  word-break: break-all;
+}
+/* overflow-wrap */
+.anywhere {
+  overflow-wrap: anywhere;
+}
+.breakWord {
+  overflow-wrap: break-word;
+  width: min-content;
+}
+
+/* text-overflow, white-space */
+.ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 200px;
+}
+.ellipsis:hover {
+  overflow: visible;
+}
+
+/* box model */
+.contentBox {
+  width: 200px;
+  height: 100px;
+  padding: 10px;
+  border: solid 10px lightgreen;
+  margin: 10px;
+}
+.borderBox {
+  width: 200px;
+  height: 100px;
+  padding: 10px;
+  border: solid 10px lightgreen;
+  margin: 10px;
+  box-sizing: border-box;
+}
+
+/* width, height */
+.fixedWidth {
+  width: 250px;
+  height: 150px;
+  background-color: moccasin;
+}
+.percentageWidth {
+  width: 50%;
+  background-color: lightgrey;
+}
+
+.divWith4Paddings {
+  padding: 25px 50px 75px 100px;
+  border: solid 1px lightgreen;
+  /* identical to:
+    padding-top: 25px;
+    padding-right: 50px;
+    padding-bottom: 75px;
+    padding-left: 100px;
+    */
+}
+.divWith3Paddings {
+  padding: 25px 50px 75px;
+  border: solid 1px lightgreen;
+  /* indentical to:
+    top padding is 25px
+    right and left paddings are 50px
+    bottom padding is 75px
+    */
+}
+
+.divWith2Paddings {
+  padding: 25px 50px;
+  border: solid 1px lightgreen;
+  /* identical to:
+    top and bottom paddings are 25px
+    right and left paddings are 50px
+    */
+}
+.divWith1Padding {
+  padding: 25px;
+  border: solid 1px lightgreen;
+  /* identical to:
+    all four paddings are 25px
+    */
+}
+
+.h1WithBorder {
+  border: 5px solid red;
+}
+
+/* unvisited link */
+a:link {
+  color: red;
+}
+
+/* visited link */
+a:visited {
+  color: green;
+}
+
+/* mouse over link */
+a:hover {
+  color: hotpink;
+}
+
+/* selected link */
+a:active {
+  color: blue;
+}
