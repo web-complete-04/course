@@ -1,0 +1,102 @@
+body {
+  color: red;
+}
+
+img {
+  float: right;
+  margin-left: 15px;
+  width: 200px;
+  height: 200px;
+}
+
+.divWithFloat {
+  float: left;
+  padding: 15px;
+}
+
+.divWithFloat1 {
+  background: red;
+  color: white;
+}
+
+.divWithFloat2 {
+  background: yellow;
+}
+
+.divWithFloat3 {
+  background: green;
+}
+
+.img2 {
+  float: right;
+}
+
+.clearfix {
+  border: 3px solid green;
+  padding: 10px;
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+div.relative {
+  position: relative;
+  left: 30px;
+  border: 3px solid #73ad21;
+}
+
+div.absolute {
+  position: absolute;
+  bottom: -350px;
+  right: 0;
+  width: 200px;
+  height: 100px;
+  border: 3px solid red;
+}
+
+div.relativeWithAbsolute {
+  position: relative;
+  width: 400px;
+  height: 200px;
+  border: 3px solid green;
+} 
+
+div.absoluteInsideRelative {
+  position: absolute;
+  top: 80px;
+  right: 0;
+  width: 200px;
+  height: 100px;
+  border: 3px solid red;
+}
+
+div.fixed {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 150px;
+  height: 50px;
+  border: 3px solid #73AD21;
+}
+
+div.sticky {
+  position: sticky;
+  top: 0;
+  padding: 5px;
+  background-color: #cae8ca;
+  border: 2px solid #4CAF50;
+}
+
+.inline-block {
+  display: inline-block;
+  width: 100px;
+  height: 150px;
+  background-color: palevioletred;
+}
+
+.hidden {
+  visibility: hidden;
+}
