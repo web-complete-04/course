@@ -1,0 +1,61 @@
+body {
+    color: red;
+}
+
+
+body {
+    color: green;
+}
+
+h1, h2, p {
+  background-color: gold;
+  border: 1px solid gray;
+}
+
+div p {
+  background-color: cornflowerblue;
+  border: 1px solid saddlebrown;
+}
+
+div > p {
+  background-color: aquamarine;
+  border: 1px solid rebeccapurple;
+}
+
+div + p {
+  background-color: cadetblue;
+  border: 1px solid greenyellow;
+}
+
+.active {
+    color: green !important;
+}
+
+.active {
+    color: blue !important;
+}
+
+ul#primary-nav li.active {
+    color: red;
+}
+
+
+
+
+
+/* ul#primary-nav li.active.firstItem {
+    color: blue;
+} */
+
+/* ul#primary-nav.list li.active {
+    color: blue;
+} */
+
+/* body > ul#primary-nav li.active {
+    color: blue;
+} */
+
+/* ul#primary-nav li.active {
+    color: blue;
+} */
+
