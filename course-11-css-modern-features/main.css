@@ -1,0 +1,103 @@
+body {
+  color: red;
+}
+
+.post {
+  container-type: inline-size;
+  container-name: sidebar;
+}
+
+/* Default heading styles for the card title */
+.card h2 {
+  font-size: 1em;
+}
+
+/* If the container is larger than 700px */
+@container sidebar (min-width: 700px) {
+  .card h2 {
+    font-size: 2em;
+  }
+}
+
+/* Select h2 elements that are immediately followed by a p element */
+h2.hasPseudoSelector:has(+ p) {
+  color: gray;
+  background-color: gold;
+  border: 2px dotted red;
+}
+
+input {
+  /* styles for input not in a label  */
+  border: tomato 2px solid;
+}
+
+label {
+  /* styles for label */
+  font-family: system-ui;
+  font-size: 1.25rem;
+
+  input { /* label input */
+    /* styles for input in a label  */
+    border: blue 2px dashed;
+
+    &:hover { /* label input:hover */
+      border-color: yellow;
+    }
+
+    /* just for demo */
+    .otherclass { /* label input .otherclass */
+        color: red;
+    } 
+  }
+}
+
+:root {
+  --main-bg-color: cornflowerblue;
+}
+
+/* For each class, set some colors */
+.one {
+  background-color: var(--main-bg-color);
+}
+.two {
+  color: black;
+  background-color: aquamarine;
+}
+.three {
+  background-color: var(--main-bg-color);
+}
+.four {
+  background-color: var(--main-bg-color);
+}
+.five {
+  background-color: var(--main-bg-color);
+}
+
+.inherit-one div {
+  background-color: var(--box-color);
+}
+
+.inherit-two {
+  --box-color: cornflowerblue;
+}
+
+.inherit-three {
+  --box-color: aquamarine;
+}
+
+@property --box-color {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: cornflowerblue;
+}
+
+.property-parent {
+  --box-color: green;
+  background-color: var(--box-color);
+}
+
+.property-child {
+  width: 80%;
+  height: 40%;
+  background-color: var(--box-color);
+}
