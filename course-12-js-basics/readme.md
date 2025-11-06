@@ -1,4 +1,4 @@
-# COURSE 01
+# JavaScript COURSE 01
 
 ## Topics
 1. JS running environments
