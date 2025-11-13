@@ -1,4 +1,4 @@
-# JavaScript COURSE 03
+# JavaScript COURSE 04
 
 ## Topics
 1. Mod operator workshop: 
