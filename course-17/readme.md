@@ -6,7 +6,7 @@
     - push / pop
     - splice
 
-2. Stack Memory & Heap Menory
+2. Stack Memory & Heap Memory
     - Primitive and Non-Primitive types
     - Arrays and Objects
     - Destructuring arrays & objects

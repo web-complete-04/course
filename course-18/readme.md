@@ -2,7 +2,7 @@
 
 ## Topics
 1. Functions workshop
-2. Stack Memory & Heap Menory
+2. Call stack
 
 
 ## Videos
