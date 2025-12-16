@@ -1,0 +1,8 @@
+.container{
+    text-align: center;
+    /* display: flex; */
+}
+
+.dice-img{
+    height: 8rem;
+}
