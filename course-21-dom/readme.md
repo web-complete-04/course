@@ -3,7 +3,7 @@
 ## Topics
 1. Output using DOM
 2. Events in JS
-3. Input using DOM
+3. Input using DOM & Events
 
 ## Videos
 1. [A Complete Overview of JavaScript Events - All You Need To Know - dcode](https://youtu.be/YiOlaiscqDY?si=lc67JelhMM2TDrP9)
