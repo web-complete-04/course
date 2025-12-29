@@ -1,0 +1,37 @@
+:root{
+    --box-side: 60px;
+    --box-border: 1px solid #b3b3b3;
+}
+
+.container {
+    text-align: center;
+}
+
+.important {
+    font-weight: bold;
+    color: rgb(148, 3, 3);
+}
+
+#squares-container {
+    display: flex;
+    flex-wrap: wrap;
+    width: calc(var(--box-side) * 10);
+    margin: 3rem auto;
+    border-right: var(--box-border);
+    border-bottom: var(--box-border);
+}
+
+.square {
+    width: var(--box-side);
+    box-sizing: border-box;
+    aspect-ratio: 1;
+    align-content: center;
+    border-left: var(--box-border);
+    border-top: var(--box-border);
+    cursor: pointer;
+}
+
+.clicked-square {
+    background-color: rgb(224, 241, 246);
+    cursor: default;
+}
