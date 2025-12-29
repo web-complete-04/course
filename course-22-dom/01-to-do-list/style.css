@@ -1,0 +1,9 @@
+.delete{
+    font-size: 0.75rem;
+    color: red;
+    cursor: pointer;
+    margin-left: 1rem;
+    padding: 0.25rem 0.5rem;
+    /* border: 1px solid red;
+    border-radius: 20px; */
+}
