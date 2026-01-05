@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM & Forms</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js" defer></script>
+</head>
+<body>
+    <h1>Message textbox</h1>
+
+    <div id="message-form">
+        <h2>Add your message</h2>
+        <form id="msg-form" action="">
+            <div class="form-section">
+                <label for="user">User:</label>
+                <select name="user" id="user">
+                    <option value="">Select a user</option>
+                    <option value="Bob">Bob</option>
+                    <option value="Jane">Jane</option>
+                    <option value="Ema">Ema</option>
+                    <option value="Andy">Andy</option>
+                </select>
+            </div>
+    
+            <div class="form-section">
+                <label for="message-text">New nessage:</label>
+                <textarea id="message-text" name="message" placeholder="Type your message here"></textarea>
+            </div>
+    
+            <div class="form-section">
+                <button id="add-message-btn">Add message</button>
+            </div>
+        </form>
+    </div>
+
+
+    <div>
+        <h2>Previous messages</h2>
+        <div id="messages-log">
+            
+            <!--
+            <div class="message">
+                <strong>User:</strong>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. A molestias accusantium aliquid minima quisquam veniam minus delectus fugiat ullam dolorum, itaque autem quo recusandae sed voluptatem. Voluptatum quaerat magnam nobis!
+            </div>
+            <div class="message">
+                <strong>User:</strong>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. A molestias accusantium aliquid minima quisquam veniam minus delectus fugiat ullam dolorum, itaque autem quo recusandae sed voluptatem. Voluptatum quaerat magnam nobis!
+            </div>
+            -->
+        </div>
+    </div>
+
+</body>
+</html>
