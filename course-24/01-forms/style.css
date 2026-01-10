@@ -1,0 +1,25 @@
+.form-section {
+    margin-bottom: 1rem;
+}
+
+#message-form label {
+    display: block;  
+    margin-bottom: 0.2rem;  
+}
+
+#user, 
+#message-text {
+    width: 20rem;
+}
+
+#message-text {
+    height: 6rem;
+}
+
+#messages-log {
+    border: 1px solid #555;
+}
+
+.message {
+    margin: 1rem
+}

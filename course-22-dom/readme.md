@@ -1,4 +1,4 @@
-# JavaScript COURSE 10
+# JavaScript COURSE 11
 
 ## Topics
 1. Output using DOM

@@ -1,8 +1,11 @@
+const form = document.querySelector('#msg-form');
+
 const messageInput = document.querySelector('#message-text');
 const userDropdown = document.querySelector('#user');
-const messagesLog = document.querySelector('#messages-log');
+
 const addMsgBtn = document.querySelector('#add-message-btn');
-const form = document.querySelector('#msg-form');
+
+const messagesLog = document.querySelector('#messages-log');
 
 
 form.addEventListener('submit', function(e){

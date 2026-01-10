@@ -1,4 +1,4 @@
-# JavaScript COURSE 10
+# JavaScript COURSE 12
 
 ## Topics
 1. Web Forms & Form controls
