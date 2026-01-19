@@ -6,6 +6,9 @@ const caracterCardsContainer = document.querySelector('#characters-container');
 fetch('https://rickandmortyapi.com/api/character?page=3')
     .then(response => response.json())
     .then(data => {
+        console.log('Response received!');
+
+        // draw cards
         data.results.forEach(character => {
             const characterCard = document.createElement('div');
             characterCard.classList.add('card','m-2');
@@ -49,7 +52,19 @@ fetch('https://rickandmortyapi.com/api/character?page=3')
             detailsBtn.classList.add('btn', 'btn-primary', 'd-block', 'mt-3');
             detailsBtn.textContent = 'Details';
             detailsBtn.href = '#';
+            detailsBtn.dataset.characterId = character.id;
             cardBody.append(detailsBtn);
-            
         });
+
+        // add event listeners after creating the cards
+        console.log('Should implement add event listener on buttons!');
+        const buttons = caracterCardsContainer.querySelectorAll('a.btn');
+        buttons.forEach(btn => btn.addEventListener('click', function (e) {
+            e.preventDefault();
+            console.log(e.target);
+            console.log(`Button with id ${e.target.dataset.characterId} was clicked!`);
+        }));
     });
+
+
+console.log('main.js code from stack was executed!');
