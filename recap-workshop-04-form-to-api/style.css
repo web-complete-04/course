@@ -1,0 +1,36 @@
+.sections-container {
+    display: flex;
+    column-gap: 3rem;
+}
+
+#main-form {
+    padding: 1rem;
+    border: 1px solid lightgrey;
+}
+
+.form-group {
+    margin-bottom: .5rem;
+}
+
+.error {
+    color: red;
+    margin-top: 0.15rem;
+    font-size: 0.75rem;
+}
+
+.form-message {
+    padding: .25rem;
+    margin-top: .5rem;
+}
+
+#error-msg{
+    border: 1px solid #9d0000;
+    background-color: rgb(249, 187, 187);
+    color: #9d0000;
+}
+
+#sucess-msg{
+    border: 1px solid #009d12;
+    background-color: rgb(187, 249, 196);
+    color:  #009d12;
+}

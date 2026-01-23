@@ -21,18 +21,16 @@ fetch(`${apiUrl}/authors`, {
 /**
  * PUT - UPDATE
  */
-/*
-fetch(`${apiUrl}/authors/87`, {
+fetch(`${apiUrl}/authors`, {
     method: "PUT",
     headers: {
         "Content-Type": "application/json",
         "Accept": "application/json"
     },
-    body: JSON.stringify({name: "Ion Popa Popas updated"})
+    body: JSON.stringify({ name: "Ion Popa Popas updated" })
 })
-.then(response => response.json())
-.then(data => console.log(data));
-*/
+    .then(response => response.json())
+    .then(data => console.log(data));
 
 /**
  * DELETE - DELETE
@@ -53,15 +51,16 @@ fetch(`${apiUrl}/authors/87`, {
 /**
  * GET - READ (entire collection)
  */
-/*
 fetch(`${apiUrl}/authors`)
-.then(response => response.json())
-.then(data => console.log(data));
-*/
+    .then(response => response.json())
+    .then(data => console.log(data));
+
 
 /**
  * GET - READ (single resource)
  */
+/*
 fetch(`${apiUrl}/authors/87`)
 .then(response => response.json())
 .then(data => console.log(data));
+*/

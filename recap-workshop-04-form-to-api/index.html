@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Submitting data to an API using a form and fetch</h1>
+
+        <div class="sections-container">
+            <!-- form -->
+            <section>
+                <h2>Add a student</h2>
+                <form id="student-form" action="#">
+                    <!-- name field -->
+                    <div class="form-group">
+                        <label for="name">Name: </label>
+                        <input type="text" id="name" name="name" placeholder="Name">
+                        <p class="error" id="name-error" style="display: none;"></p>
+                    </div>
+
+                    <!-- email field -->
+                    <div class="form-group">
+                        <label for="email">Email: </label>
+                        <input type="text" id="email" name="email" placeholder="Email">
+                        <p class="error" id="email-error" style="display: none;"></p>
+                    </div>
+
+                    <!-- submit button -->
+                    <button>Add</button>
+                </form>
+
+                <div id="sucess-msg" class="form-message" style="display: none;">Success!</div>
+                <div id="error-msg" class="form-message" style="display: none;">There is an error in your form!</div>
+            </section>
+    
+            <!-- list -->
+            <section>
+                <h2>List of all authors</h2>
+                <ol id="authors-list"></ol>
+                To do...
+            </section>
+        </div>
+    </div>
+</body>
+</html>
