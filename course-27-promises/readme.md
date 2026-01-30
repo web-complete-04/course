@@ -1,4 +1,4 @@
-# JavaScript COURSE 15
+# JavaScript COURSE 16
 
 ## Topics
 1. Using async await instead of fetch - then - then
