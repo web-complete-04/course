@@ -1,0 +1,22 @@
+#display {
+    display: flex;
+}
+
+.card {
+    border: 1px solid lightgrey;
+    font-size: 2rem;
+    font-weight: bold;
+    height: 3rem;
+    aspect-ratio: 1;
+    text-align: center;
+}
+
+.card sub {
+    font-size: 0.75rem;
+    font-weight: normal;
+    color: red;
+}
+
+.advanced-card {
+    border: 1px solid darkblue;
+}
