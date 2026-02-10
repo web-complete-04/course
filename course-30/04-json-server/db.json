@@ -1,0 +1,60 @@
+{
+  "$schema": "./node_modules/json-server/schema.json",
+  "posts": [
+    {
+      "id": "1",
+      "title": "a title",
+      "views": 100,
+      "releaseDate": "2026-01-03"
+    },
+    {
+      "id": "2",
+      "title": "another title",
+      "views": 200,
+      "releaseDate": "2026-02-05"
+    },
+    {
+      "id": "77ec",
+      "title": "Added by fetch",
+      "views": 0,
+      "releaseDate": "2026-02-09"
+    }
+  ],
+  "comments": [
+    {
+      "id": "1",
+      "text": "a comment about post 1",
+      "postId": "1"
+    },
+    {
+      "id": "2",
+      "text": "another comment about post 1",
+      "postId": "1"
+    }
+  ],
+  "categories": [
+    {
+      "id": "100",
+      "name": "Romance"
+    },
+    {
+      "id": "101",
+      "name": "History"
+    },
+    {
+      "id": "102",
+      "name": "SF"
+    },
+    {
+      "id": "5fca",
+      "name": "Fantasy"
+    },
+    {
+      "id": "600a",
+      "name": "Religion"
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
