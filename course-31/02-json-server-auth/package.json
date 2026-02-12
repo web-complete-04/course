@@ -1,0 +1,13 @@
+{
+  "dependencies": {
+    "json-server": "^0.17.4",
+    "json-server-auth": "^2.1.0"
+  },
+  "scripts": {
+    "json-server": "npx json-server db.json",
+    "json-server-auth": "npx json-server db.json -m ./node_modules/json-server-auth  -r routes.json"
+  },
+  "overrides": {
+    "jsonwebtoken": "^9.0.2"
+  }
+}
