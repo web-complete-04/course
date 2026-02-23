@@ -1,0 +1,9 @@
+.component { 
+    border: 1px solid;
+    width: 400px;
+    padding: 1rem;
+}
+
+.hidden {
+    display: none;
+}
