@@ -1,7 +1,7 @@
 # JavaScript COURSE 21
 
 ## Topics
-1. Literal Object in JS
+1. Literal Objects in JS
 2. ES6 Classes 
 
 ## Videos
