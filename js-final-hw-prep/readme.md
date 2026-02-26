@@ -52,6 +52,6 @@
 
 ## SESSION VIDEO
 
-[Zoom Recording Link](https://scoalainformala.zoom.us/rec/share/K7KJ49mxmO6fHCIEU0dGAaJXM3M9SmhsEUox7enTM6fYBm0VMxIlyG-cvKcjDy22.h_MCH8Zaf00NWCQZ)
+[Zoom Recording Link](https://scoalainformala.zoom.us/rec/share/trHSUvEvcaVHNa4Te1QWAu4VQllYhhdXuYYEOUWJcjELAz1Bj52XKV-cqaPukQoY.KJOyTh6xpxQvwqvU)
 
 **Passcode:**: RvwQ1$wE
