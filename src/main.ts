@@ -74,3 +74,67 @@ const result2 = add('Paul', 'Negoescu');
 
 
 // Discriminated Unions
+type User = ({
+  isAdmin: true;
+  doAdminStuff(): void;
+} | {
+  isAdmin: false;
+  doUserStuff(): void;
+}) & {
+  name: string;
+};
+
+const user: User = {
+  name: 'Paul',
+  isAdmin: true,
+  doAdminStuff() {
+    console.log(`I'm an admin!`);
+  }
+}
+
+const user2: User = {
+  name: 'Claudia',
+  isAdmin: false,
+  doUserStuff() {
+    console.log(`I'm a normal user.`);
+  }
+}
+
+user.doAdminStuff();
+user2.doUserStuff();
+
+interface iVehicle {
+  drive(): void;
+}
+
+const acceptableFuels = ['coal', 'gas', 'diesel', 'uranium'] as const;
+type AcceptableFuel = typeof acceptableFuels[number];
+
+class Vehicle {
+  private pfuel: AcceptableFuel = 'coal';
+
+  constructor(fuel: AcceptableFuel) {
+    this.pfuel = fuel;
+  }
+
+  get fuel() {
+    return this.pfuel;
+  }
+}
+
+class Car extends Vehicle implements iVehicle {
+  constructor() { 
+    super('gas');
+  }
+
+  public drive() {
+    console.log('driving with '+ this.fuel);
+  }
+}
+
+const train = new Vehicle('uranium');
+
+const car = new Car();
+car.drive();
+
+const bike: Vehicle = car;
