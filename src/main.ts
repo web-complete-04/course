@@ -1,140 +1,181 @@
-// Primitive types
-// number, string, boolean, undefined, null, bigint, symbol
-let myVar: string | number = 'Paul';
-myVar = 3;
+// Array iterator methods
+const users = [
+  {
+    name: 'jsmith',
+    password: 'pass123',
+    fName: 'John',
+    lName: 'Smith',
+    height: 180,
+    weight: 100,
+  },
+  {
+    name: 'mchen',
+    password: 'pass123',
+    fName: 'Maria',
+    lName: 'Chen',
+    height: 165,
+    weight: 62,
+  },
+  {
+    name: 'awilson',
+    password: 'pass123',
+    fName: 'Alex',
+    lName: 'Wilson',
+    height: 175,
+    weight: 70,
+  },
+  {
+    name: 'jbrown',
+    password: 'pass123',
+    fName: 'James',
+    lName: 'Brown',
+    height: 182,
+    weight: 82,
+  },
+  {
+    name: 'sgarcia',
+    password: 'pass123',
+    fName: 'Sofia',
+    lName: 'Garcia',
+    height: 168,
+    weight: 65,
+  },
+  {
+    name: 'dmiller',
+    password: 'pass123',
+    fName: 'David',
+    lName: 'Miller',
+    height: 178,
+    weight: 78,
+  },
+  {
+    name: 'ltaylor',
+    password: 'pass123',
+    fName: 'Lisa',
+    lName: 'Taylor',
+    height: 162,
+    weight: 58,
+  },
+  {
+    name: 'rjones',
+    password: 'pass123',
+    fName: 'Robert',
+    lName: 'Jones',
+    height: 185,
+    weight: 85,
+  },
+  {
+    name: 'ewhite',
+    password: 'pass123',
+    fName: 'Emma',
+    lName: 'White',
+    height: 170,
+    weight: 68,
+  },
+  {
+    name: 'clee',
+    password: 'pass123',
+    fName: 'Chris',
+    lName: 'Lee',
+    height: 176,
+    weight: 72,
+  },
+];
 
-// Array
-const myArr: (number | string)[] = [1, 2, 3, 6, 'Paul'];
-// const myArr: Array<number | string> = [1, 2, 3, 6];
+type User = (typeof users)[0];
+type ChangedUser = {
+  fullName: string;
+  bmi: number;
+}[];
 
-// Tuple
-const myTuple: [number, string, boolean] = [42, 'Paul', false];
+// Array.prototype.myMap = myMap;
 
-type Paul = string | number;
+// 1. Create a function that returns an array of objects with { fullName: fName + ' ' + lName, height, weight };
+function changeArray(userArr: User[]): ChangedUser {
+  // const ret: ChangedUser = [];
+  // userArr.forEach(user => ret.push({
+  //   fullName: `${user.fName} ${user.lName}`,
+  //   bmi: Number((user.weight / (user.height / 100) ** 2).toFixed(1)),
+  // }));
+  // return ret;
 
-const varNeo: Paul = 'test';
+  // const ret: ChangedUser = [];
+  // for(let i = 0; i < userArr.length; i++) {
+  //   const user = userArr[i];
+  //   ret.push({
+  //     fullName: `${user.fName} ${user.lName}`,
+  //     bmi: Number((user.weight / (user.height / 100) ** 2).toFixed(1)),
+  //   });
+  // }
+  // return ret;
 
-// Objects
-type Person = {
-  name: string;
-  age: number;
-  height: number;
-  weight: number;
-  calculateBmi(): number;
-};
+  // const ret: ChangedUser = [];
+  // for(const user of userArr) {
+  //   ret.push({
+  //     fullName: `${user.fName} ${user.lName}`,
+  //     bmi: Number((user.weight / (user.height / 100) ** 2).toFixed(1)),
+  //   });
+  // }
+  // return ret;
 
-// interface IPerson {
-//   name: string;
-//   age: number;
-//   height: number;
-//   weight: number;
-//   calculateBmi(): number;
+  // return userArr.myMap((user) => ({
+  //   fullName: `${user.fName} ${user.lName}`,
+  //   bmi: Number((user.weight / (user.height / 100) ** 2).toFixed(1)),
+  // }))
+
+  return userArr.map((user) => ({
+    fullName: `${user.fName} ${user.lName}`,
+    bmi: Number((user.weight / (user.height / 100) ** 2).toFixed(1)),
+  }));
+}
+
+const changed = changeArray(users);
+console.log(changed);
+
+function myMap<T, R>(
+  this: T[],
+  fn: (elem: T, index?: number, arr?: T[]) => R,
+): R[] {
+  const ret = [];
+  for (let i = 0; i < this.length; i++) {
+    const elem = this[i];
+    ret.push(fn(elem, i, this));
+  }
+  return ret;
+}
+
+// function User(name: string) {
+//   this.name = name;
 // }
 
-const person: Person = {
-  name: 'Paul',
-  age: 40,
-  height: 1.85,
-  weight: 100,
-  calculateBmi() {
-    return Number((this.weight / this.height ** 2).toFixed(1));
-  },
-};
+// User.thisIsStatic = function () {
+//   console.log('This is also static');
+// }
 
-const person2: Person = {
-  name: 'Cristina',
-  age: 25,
-  height: 1.73,
-  weight: 60,
-  calculateBmi: person.calculateBmi,
-};
-
-console.log(
-  myVar,
-  myArr,
-  myTuple,
-  person.calculateBmi(),
-  person2.calculateBmi(),
-  person.calculateBmi === person2.calculateBmi,
-);
-
-function add(n1: number, n2: number): number
-function add(n1: string, n2: string): string
-function add(n1: number | string, n2: number | string) {
-  if(typeof n1 === 'number' && typeof n2 === 'number') {
-    return n1 + n2;
-  }
-  if(typeof n1 === 'string' && typeof n2 === 'string') {
-    return n1 + n2;
-  }
-}
-
-const result = add(1, 2);
-const result2 = add('Paul', 'Negoescu');
+// const user1 = new User('Paul');
+// console.log(user1.name);
 
 
-// Discriminated Unions
-type User = ({
-  isAdmin: true;
-  doAdminStuff(): void;
-} | {
-  isAdmin: false;
-  doUserStuff(): void;
-}) & {
-  name: string;
-};
+// class Admin extends User {
+//   constructor(name: string) {
+//     super(name);
+//     this.isAdmin = true;
+//   }
 
-const user: User = {
-  name: 'Paul',
-  isAdmin: true,
-  doAdminStuff() {
-    console.log(`I'm an admin!`);
-  }
-}
+//   walk() {
+//     console.log('walking')
+//   }
 
-const user2: User = {
-  name: 'Claudia',
-  isAdmin: false,
-  doUserStuff() {
-    console.log(`I'm a normal user.`);
-  }
-}
+//   static whatever() {
+//     console.log('This is a static function');
+//   }
+// }
+// const user2 = new Admin('Andrei');
 
-user.doAdminStuff();
-user2.doUserStuff();
+// Admin.prototype.sayHello = function() {
+//   console.log('Hello from', this.name);
+// }
 
-interface iVehicle {
-  drive(): void;
-}
+// console.log(Admin.whatever());
 
-const acceptableFuels = ['coal', 'gas', 'diesel', 'uranium'] as const;
-type AcceptableFuel = typeof acceptableFuels[number];
-
-class Vehicle {
-  private pfuel: AcceptableFuel = 'coal';
-
-  constructor(fuel: AcceptableFuel) {
-    this.pfuel = fuel;
-  }
-
-  get fuel() {
-    return this.pfuel;
-  }
-}
-
-class Car extends Vehicle implements iVehicle {
-  constructor() { 
-    super('gas');
-  }
-
-  public drive() {
-    console.log('driving with '+ this.fuel);
-  }
-}
-
-const train = new Vehicle('uranium');
-
-const car = new Car();
-car.drive();
-
-const bike: Vehicle = car;
+// user2.sayHello();
