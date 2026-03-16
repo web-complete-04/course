@@ -27,5 +27,8 @@ export default defineConfig([
         projectService: true,
       },
     },
+    rules: {
+      '@typescript-eslint/consistent-type-definitions': ['error', 'type'],
+    },
   },
 ])
