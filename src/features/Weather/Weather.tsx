@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react";
 import type { WeatherData } from "./types";
 
+const apiKey = import.meta.env.VITE_OPEN_WEATHER_MAP_KEY;
+
 const cityNameApiUrl =
-  "https://api.openweathermap.org/data/2.5/weather?units=metric&appid=06671faf1a6a7a89b34cfe87f9ff1099";
+  `https://api.openweathermap.org/data/2.5/weather?units=metric&appid=${apiKey}`;
 
 const geolocationApiUrl =
-  "https://api.openweathermap.org/data/2.5/weather?appid=06671faf1a6a7a89b34cfe87f9ff1099&units=metric";
+  `https://api.openweathermap.org/data/2.5/weather?appid=${apiKey}&units=metric`;
 
 export function Weather() {
   const [weatherData, setWeatherData] = useState<WeatherData | null>(null);

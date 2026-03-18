@@ -1,0 +1,3 @@
+.todoItem:has([type=checkbox]:checked) {
+  text-decoration: line-through;
+}
