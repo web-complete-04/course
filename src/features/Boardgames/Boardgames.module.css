@@ -1,0 +1,38 @@
+.list {
+  display: grid;
+  gap: .5rem;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+
+  & > h1 {
+    grid-column: 1 / -1;
+  }
+}
+
+.card {
+  display: flex;
+  align-items: stretch;
+
+  box-shadow: 0 3px 3px rgba(0, 0, 0, .3);
+
+  & img {
+    margin-bottom: 1rem;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  & > a {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+
+    color: inherit;
+    text-align: center;
+    text-decoration: none;
+
+    & > h2 {
+      margin-top: auto;
+
+      font-size: 1rem;
+    }
+  }
+}

@@ -21,6 +21,9 @@ export default defineConfig([
       reactX.configs['recommended-typescript'],
       reactDom.configs.recommended,
     ],
+    rules: {
+      '@typescript-eslint/consistent-type-definitions': ['error', 'type'],
+    },
     languageOptions: {
       ecmaVersion: 2020,
       globals: globals.browser,
