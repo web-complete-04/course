@@ -14,9 +14,10 @@ export default defineConfig([
     extends: [
       js.configs.recommended,
       tseslint.configs.recommendedTypeChecked,
+      tseslint.configs.strictTypeChecked,
+      tseslint.configs.stylisticTypeChecked,
       reactHooks.configs.flat.recommended,
       reactRefresh.configs.vite,
-      tseslint.configs.stylisticTypeChecked,
       reactX.configs['recommended-typescript'],
       reactDom.configs.recommended,
     ],
@@ -24,11 +25,9 @@ export default defineConfig([
       ecmaVersion: 2020,
       globals: globals.browser,
       parserOptions: {
-        projectService: true,
+        project: ['./tsconfig.node.json', './tsconfig.app.json'],
+        tsconfigRootDir: import.meta.dirname,
       },
-    },
-    rules: {
-      '@typescript-eslint/consistent-type-definitions': ['error', 'type'],
     },
   },
 ])
