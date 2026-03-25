@@ -1,0 +1,47 @@
+.topNav {
+  --bgColor: var(--color-dark-gray);
+
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  background-color: var(--bgColor);
+
+  @media (prefers-color-scheme: dark) {
+    --bgColor: var(--color-light-gray)
+  }
+
+  & a {
+    display: inline-block;
+    padding: 1rem;
+
+    color: var(--color-text-light);
+    text-decoration: none;
+
+    @media (prefers-color-scheme: dark) {
+      color: var(--color-text-dark);
+    }
+  }
+
+  & > menu {
+    display: flex;
+    flex-grow: 1;
+    /* gap: 1rem; */
+
+    padding: 0;
+    margin: 0;
+
+    list-style: none;
+  }
+}
+
+.pushRight {
+  margin-left: auto;
+}
+
+a.logo {
+  color: var(--color-brand-primary);
+
+  font-family: "Caveat", cursive;
+  font-size: 4rem;
+  font-weight: bold;
+}
