@@ -3,15 +3,15 @@ import type { Boardgame } from "./types";
 import { BoardgameCard } from "./BoardgameCard";
 
 import styles from './Boardgames.module.css';
+import { Api } from "../../utils/api";
+
+const boardgames = new Api<Boardgame[]>('boardgames');
 
 export function BoardgameList() {
   const [games, setGames] = useState<Boardgame[] | null>(null);
 
   useEffect(() => {
-    fetch("/api/boardgames?_limit=10")
-      .then((res) => res.json())
-      .then(setGames)
-      .catch(console.error);
+    void boardgames.readAll().then(setGames);
   }, []);
 
   return (

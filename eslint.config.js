@@ -23,6 +23,9 @@ export default defineConfig([
     ],
     rules: {
       '@typescript-eslint/consistent-type-definitions': ['error', 'type'],
+      '@typescript-eslint/no-invalid-void-type': ['error', {
+        allowAsThisParameter: true,
+      }]
     },
     languageOptions: {
       ecmaVersion: 2020,

@@ -2,6 +2,9 @@ import { useEffect, useState, type ReactNode } from "react";
 import { Link, useParams } from "react-router";
 import { FaHeart, FaStar, FaStarHalfAlt } from "react-icons/fa";
 import type { Boardgame } from "./types";
+import { Api } from "../../utils/api";
+
+const boardgames = new Api<Boardgame>('boardgames');
 
 function getStars(num: number) {
   const flooredNum = Math.floor(num);
@@ -24,10 +27,7 @@ export function BoardgameDetails() {
   useEffect(() => {
     if (!id) return;
 
-    fetch(`/api/boardgames/${id}`)
-      .then((res) => res.json())
-      .then(setGame)
-      .catch(console.warn);
+    void boardgames.readOne(id).then(setGame);
   }, [id]);
 
   if (!game) {
