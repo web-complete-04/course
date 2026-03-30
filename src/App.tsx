@@ -6,6 +6,7 @@ import { Nav } from "./components/Nav/Nav";
 import { NotFound } from "./features/NotFound/NotFound";
 
 import './App.css';
+import './Forms.css';
 
 export function App() {
   return (

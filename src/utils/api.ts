@@ -7,7 +7,6 @@ export class ApiError extends Error {
   }
 }
 
-
 export class Api<Data> {
   public resource: string;
 
@@ -62,7 +61,7 @@ export class Api<Data> {
   }
 
   public create() {
-    //this is not empty
+    // this.makeRequest();
   }
 
   public readOne(id: number | string) {
