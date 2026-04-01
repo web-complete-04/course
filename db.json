@@ -1,11 +1,18 @@
 {
   "users": [
     {
-      "id": 1,
       "email": "a@a.com",
-      "password": "encrypted",
+      "password": "$2a$10$YX6/gOW4AgwGgq9qL3gHdevZiCpn7Xb70tO3CQG2EiUwOOy1PqKCW",
       "firstName": "Paul",
-      "lastName": "Negoescu"
+      "lastName": "Negoescu",
+      "id": 1
+    },
+    {
+      "email": "p@p.com",
+      "password": "$2a$10$TftTsQPAqQbILpy36rRfvOPymTv70HthrRm3FZrCwAepxBWI9nv3C",
+      "firstName": "Paul",
+      "lastName": "Negoescu",
+      "id": 2
     }
   ],
   "boardgames": [

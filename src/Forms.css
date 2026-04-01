@@ -46,6 +46,11 @@
     }
   }
 
+  & .errorMessage { 
+    color: var(--color-warning);
+    margin-top: 0;
+  }
+
   
   @media screen and (min-width: 510px) {
     gap: 1rem;
@@ -71,6 +76,10 @@
     & > label,
     & > button {
       margin-top: 0;
+    }
+
+    & .errorMessage { 
+      grid-column-start: 2; 
     }
   }
 }
