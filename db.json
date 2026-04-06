@@ -13,6 +13,13 @@
       "firstName": "Paul",
       "lastName": "Negoescu",
       "id": 2
+    },
+    {
+      "email": "b@b.com",
+      "password": "$2a$10$ky1.cNlo4IpdMvnWggNSv.Zq/SZNstFHp5OmJ6AHurrtrNP50Leqq",
+      "firstName": "Paul",
+      "lastName": "Negoescu",
+      "id": 3
     }
   ],
   "boardgames": [

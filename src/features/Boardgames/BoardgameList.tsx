@@ -5,13 +5,13 @@ import { BoardgameCard } from "./BoardgameCard";
 import styles from './Boardgames.module.css';
 import { Api } from "../../utils/api";
 
-const boardgames = new Api<Boardgame[]>('boardgames');
+const boardgames = new Api('boardgames');
 
 export function BoardgameList() {
   const [games, setGames] = useState<Boardgame[] | null>(null);
 
   useEffect(() => {
-    void boardgames.readAll().then(setGames);
+    void boardgames.readAll<Boardgame[]>().then(setGames);
   }, []);
 
   return (

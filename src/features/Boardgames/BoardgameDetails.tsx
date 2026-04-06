@@ -4,7 +4,7 @@ import { FaHeart, FaStar, FaStarHalfAlt } from "react-icons/fa";
 import type { Boardgame } from "./types";
 import { Api } from "../../utils/api";
 
-const boardgames = new Api<Boardgame>('boardgames');
+const boardgames = new Api('boardgames');
 
 function getStars(num: number) {
   const flooredNum = Math.floor(num);
@@ -27,7 +27,7 @@ export function BoardgameDetails() {
   useEffect(() => {
     if (!id) return;
 
-    void boardgames.readOne(id).then(setGame);
+    void boardgames.readOne<Boardgame>(id).then(setGame);
   }, [id]);
 
   if (!game) {

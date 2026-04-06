@@ -1,24 +1,11 @@
 import { useState } from "react";
 import { useZodValidation } from "../../hooks/useZodValidation";
 import { Api } from "../../utils/api";
-import * as z from "zod";
+import { registerSchema as validationSchema } from "./validationSchemas";
+import { useAuth } from "./context/useAuth";
+import type { Auth } from "./types";
 
 const registerApi = new Api("register");
-
-const validationSchema = z
-  .object({
-    email: z.email("Please provide a valid email address."),
-    password: z
-      .string()
-      .min(6, "Your password needs to be at least 6 characters long."),
-    retypePassword: z.string().min(6, "Please type your password again."),
-    firstName: z.string().nonempty("Please tell us how to call you."),
-    lastName: z.string().nonempty("Let us know your last name."),
-  })
-  .refine((data) => data.password === data.retypePassword, {
-    message: "Passwords don't match.",
-    path: ["retypePassword"],
-  });
 
 export function Register() {
   const [formValues, setFormValues] = useState({
@@ -29,6 +16,8 @@ export function Register() {
     lastName: "",
   });
   const { errors, isValid } = useZodValidation(validationSchema);
+
+  const {login} = useAuth();
 
   function handleSubmit(e: React.SubmitEvent) {
     e.preventDefault();
@@ -43,7 +32,7 @@ export function Register() {
 
     const { retypePassword, ...dataForServer } = formValues;
 
-    void registerApi.create(dataForServer).then((res) => console.log(res));
+    void registerApi.create<Auth>(dataForServer).then(login);
   }
 
   function handleInputChange(e: React.ChangeEvent<HTMLInputElement>) {
@@ -52,12 +41,14 @@ export function Register() {
     // const inputName = e.target.name as keyof typeof formValues;
     // newFormValues[inputName] = value;
 
+    const newValues = {...formValues, [e.target.name]: e.target.value};
+
     if(errors) {
-      isValid(formValues);
+      isValid(newValues);
     }
 
-    setFormValues({...formValues, [e.target.name]: e.target.value});
-  }
+    setFormValues(newValues);    
+  }  
 
   return (
     <form className="brandForm" onSubmit={handleSubmit}>
