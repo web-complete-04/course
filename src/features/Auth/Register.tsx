@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Navigate } from "react-router";
 import { useZodValidation } from "../../hooks/useZodValidation";
 import { Api } from "../../utils/api";
 import { registerSchema as validationSchema } from "./validationSchemas";
@@ -17,7 +18,7 @@ export function Register() {
   });
   const { errors, isValid } = useZodValidation(validationSchema);
 
-  const {login} = useAuth();
+  const {login, user} = useAuth();
 
   function handleSubmit(e: React.SubmitEvent) {
     e.preventDefault();
@@ -49,6 +50,10 @@ export function Register() {
 
     setFormValues(newValues);    
   }  
+
+  if(user) {
+    return <Navigate to="/" />
+  }
 
   return (
     <form className="brandForm" onSubmit={handleSubmit}>

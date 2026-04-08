@@ -6,8 +6,11 @@
   align-items: center;
   background-color: var(--bgColor);
 
+  color: var(--color-text-light);
+
   @media (prefers-color-scheme: dark) {
-    --bgColor: var(--color-light-gray)
+    --bgColor: var(--color-light-gray);
+    color: var(--color-text-dark);
   }
 
   & a {
@@ -16,6 +19,12 @@
 
     color: var(--color-text-light);
     text-decoration: none;
+
+    &:hover,
+    &:active {
+      text-decoration: underline;
+      color: var(--color-brand-secondary);
+    }
 
     @media (prefers-color-scheme: dark) {
       color: var(--color-text-dark);

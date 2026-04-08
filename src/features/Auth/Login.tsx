@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router";
 import { useZodValidation } from "../../hooks/useZodValidation";
 import { Api } from "../../utils/api";
 import { loginSchema as validationSchema } from "./validationSchemas";
@@ -14,7 +15,14 @@ export function Login() {
   });
   const { errors, isValid } = useZodValidation(validationSchema);
 
-  const { login } = useAuth();
+  const { login, user } = useAuth();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if(user) {
+      void navigate('/');
+    }
+  }, [user, navigate]);
 
   function handleSubmit(e: React.SubmitEvent) {
     e.preventDefault();

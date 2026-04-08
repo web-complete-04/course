@@ -19,6 +19,7 @@ export function useStorageState<V>(storageKey: string, initialValue: V) {
 
   function deleteValue() {
     localStorage.removeItem(storageKey);
+    setValue(initialValue);
   }
 
   return [value, updateValue, deleteValue] as const;
