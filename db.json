@@ -10756,6 +10756,22 @@
         "best": 0
       },
       "id": 287
+    },
+    {
+      "name": "sadas",
+      "thumbnail": "https://cdn.abcotvs.com/dip/images/14476619_bestboardgames.jpg",
+      "image": "https://cdn.abcotvs.com/dip/images/14476619_bestboardgames.jpg",
+      "numberOfPlayers": {
+        "min": 1,
+        "max": 2,
+        "recommended": 4,
+        "best": 3
+      },
+      "alternateNames": [
+        "Test",
+        "Test2"
+      ],
+      "id": 288
     }
   ]
 }

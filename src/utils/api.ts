@@ -70,7 +70,7 @@ export class Api {
       .then(this.handleResponse<R>);
   }
 
-  public create<R>(body: Record<string, string>) {
+  public create<R>(body: unknown) {
     return this.makeRequest<R>({
       method: 'POST',
       body: JSON.stringify(body),

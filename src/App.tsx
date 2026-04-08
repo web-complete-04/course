@@ -1,6 +1,7 @@
 import { Route, Routes } from "react-router";
 import { BoardgameList } from "./features/Boardgames/BoardgameList";
 import { BoardgameDetails } from "./features/Boardgames/BoardgameDetails";
+import { BoardgameAddForm } from "./features/Boardgames/BoardgameAddForm";
 import { Register } from "./features/Auth/Register";
 import { Parent } from "./features/Communication/Parent";
 import { Login } from "./features/Auth/Login";
@@ -21,6 +22,7 @@ export function App() {
         <Route path="login" element={<Login />} />
         <Route path="register" element={<Register />} />
         <Route path="boardgames/:id" element={<BoardgameDetails />} />
+        <Route path="boardgames/add" element={<BoardgameAddForm />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </AuthContextProvider>

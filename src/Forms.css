@@ -1,11 +1,16 @@
 .brandForm {
   display: grid;
    
+  & > fieldset {
+    display: grid;
+    grid-column: 1 / -1;
+  }
+
   & > h1 {
     grid-column: 1 / -1;
   }
   
-  & > label,
+  & label,
   & > button {
     margin-top: 1rem;
   }
@@ -58,13 +63,18 @@
     
     margin: 0 auto;
     max-width: 760px;
+
+    & > fieldset {
+      gap: 1rem;
+      grid-template-columns: 150px 1fr;
+    }
     
     & > button {
       grid-column-start: 2;
       justify-self: start;
     }
 
-    & > label {
+    & label {
       align-self: center;
       justify-self: end;
 

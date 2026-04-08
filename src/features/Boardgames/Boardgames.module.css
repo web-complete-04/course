@@ -8,6 +8,27 @@
   }
 }
 
+.addBtn {
+  --bgColor: var(--color-brand-highlight);
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+
+  padding: 1.5rem;
+
+  background: var(--bgColor);
+  border: none;
+  border-radius: 50%;
+  color: var(--color-brand-dark);
+  cursor: pointer;
+  font-size: 3rem;
+  line-height: 0;
+
+  &:hover {
+    --bgColor: color-mix(in srgb, var(--color-brand-highlight) 70%, #fff);
+  }
+}
+
 .card {
   --shadow-color: color-mix(in srgb, var(--color-dark-gray) 50%, transparent);
   
