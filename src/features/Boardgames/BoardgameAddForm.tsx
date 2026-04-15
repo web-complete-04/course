@@ -50,6 +50,7 @@ export function BoardgameAddForm() {
     const inputName = e.target.name;
     const newValues = { ...formValues };
 
+    
     type InputObject = z.infer<typeof validationSchema>;
     type InputNamesWithoutNoPlayers = keyof Omit<
       InputObject,
