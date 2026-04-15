@@ -10723,42 +10723,8 @@
       }
     },
     {
-      "otherRanks": {},
-      "playtime": {},
-      "numberOfPlayers": {},
-      "description": "dasdas asd da",
-      "alternateNames": [
-        "Your alternate name",
-        "English"
-      ],
-      "image": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fmedia.printables.com%2Fmedia%2Fprints%2F436015%2Fimages%2F3607226_4a234021-9310-40f1-8ac5-5d97ef53c143%2Fearth-2.jpeg&f=1&nofb=1&ipt=cfcfb255cb0ceea42ae2ecd79465f308dd4ccaeb7b674efee8b3f38776c4ddc6&ipo=images",
-      "thumbnail": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fmedia.printables.com%2Fmedia%2Fprints%2F436015%2Fimages%2F3607226_4a234021-9310-40f1-8ac5-5d97ef53c143%2Fearth-2.jpeg&f=1&nofb=1&ipt=cfcfb255cb0ceea42ae2ecd79465f308dd4ccaeb7b674efee8b3f38776c4ddc6&ipo=images",
-      "name": "Test Edited",
-      "bggId": 1234,
-      "id": 286
-    },
-    {
-      "userId": 1,
-      "bggId": 213123,
-      "name": "Test",
-      "thumbnail": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn.lifehack.org%2Fwp-content%2Fuploads%2F2014%2F08%2F25boardgames4.jpg&f=1&nofb=1&ipt=bdcd7f4aec37ed2a0e50f0e7699a16fd7065e71cce19dae89ba50dee0f8bd081&ipo=images",
-      "image": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn.lifehack.org%2Fwp-content%2Fuploads%2F2014%2F08%2F25boardgames4.jpg&f=1&nofb=1&ipt=bdcd7f4aec37ed2a0e50f0e7699a16fd7065e71cce19dae89ba50dee0f8bd081&ipo=images",
-      "description": "Something",
-      "alternateNames": [
-        "Test1",
-        "Test2",
-        "Test3"
-      ],
-      "numberOfPlayers": {
-        "min": 12,
-        "max": 14,
-        "recommended": 0,
-        "best": 0
-      },
-      "id": 287
-    },
-    {
       "name": "sadas",
+      "userId": 2,
       "thumbnail": "https://cdn.abcotvs.com/dip/images/14476619_bestboardgames.jpg",
       "image": "https://cdn.abcotvs.com/dip/images/14476619_bestboardgames.jpg",
       "numberOfPlayers": {
