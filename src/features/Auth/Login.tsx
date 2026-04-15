@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router";
+import { useLocation, useNavigate, type Location } from "react-router";
 import { useZodValidation } from "../../hooks/useZodValidation";
 import { Api } from "../../utils/api";
 import { loginSchema as validationSchema } from "./validationSchemas";
@@ -17,12 +17,14 @@ export function Login() {
 
   const { login, user } = useAuth();
   const navigate = useNavigate();
+  const location = useLocation() as Location<{from: string} | undefined>;
 
   useEffect(() => {
     if(user) {
-      void navigate('/');
+      const to = location.state?.from ?? '/';
+      void navigate(to);
     }
-  }, [user, navigate]);
+  }, [user, navigate, location]);
 
   function handleSubmit(e: React.SubmitEvent) {
     e.preventDefault();

@@ -10723,19 +10723,21 @@
       }
     },
     {
-      "name": "sadas",
+      "name": "Am terminat oare?",
       "userId": 2,
       "thumbnail": "https://cdn.abcotvs.com/dip/images/14476619_bestboardgames.jpg",
       "image": "https://cdn.abcotvs.com/dip/images/14476619_bestboardgames.jpg",
       "numberOfPlayers": {
         "min": 1,
         "max": 2,
-        "recommended": 4,
-        "best": 3
+        "recommended": 40,
+        "best": 34
       },
       "alternateNames": [
         "Test",
-        "Test2"
+        "Test2",
+        "Alternativ 3",
+        "Test 6"
       ],
       "id": 288
     }
