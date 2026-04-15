@@ -41,6 +41,12 @@ export default defineConfig([
           ignoreRestSiblings: true,
         },
       ],
+      "@typescript-eslint/no-misused-promises": [
+        "error",
+        {
+          checksVoidReturn: false
+        }
+      ]
     },
     languageOptions: {
       ecmaVersion: 2020,

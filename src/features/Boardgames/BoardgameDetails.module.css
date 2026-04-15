@@ -1,0 +1,19 @@
+.Modal {
+  padding: 2rem;
+
+  width: 80%;
+  overflow-y: auto;
+
+  background-color: var(--color-dark-gray);
+}
+
+.Overlay {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: fixed;
+  inset: 0;
+
+  background-color: #fffc;
+}

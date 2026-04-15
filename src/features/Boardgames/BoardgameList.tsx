@@ -15,7 +15,7 @@ export function BoardgameList() {
   const {user} = useAuth();
 
   useEffect(() => {
-    void boardgames.readAll<Boardgame[]>().then(setGames);
+    void boardgames.readAll<Boardgame[]>(29).then(setGames);
   }, []);
 
   return (

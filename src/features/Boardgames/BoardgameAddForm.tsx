@@ -3,6 +3,9 @@ import * as z from "zod/v4";
 import { useZodValidation } from "../../hooks/useZodValidation";
 import { Api } from "../../utils/api";
 import type { Boardgame } from "./types";
+import { useAuth } from "../Auth/context/useAuth";
+import { toast } from "react-toastify";
+import { useNavigate } from "react-router";
 
 const validationSchema = z.object({
   name: z.string().nonempty(),
@@ -33,24 +36,36 @@ export function BoardgameAddForm() {
     alternateNames: [""],
   });
 
+  const {user, accessToken} = useAuth();
+  const navigate = useNavigate();
+
+  if(accessToken) {
+    boardgameApi.setAsAuthRequired(accessToken);
+  }
+
   const { errors, isValid } = useZodValidation(validationSchema);
 
-  function handleSubmit(e: React.SubmitEvent) {
+  async function handleSubmit(e: React.SubmitEvent) {
     e.preventDefault();
 
+    if(!user?.id) return;
+
     if (!isValid(formValues)) return;
-    const send2Server = {...formValues};
+    const send2Server: Partial<Boardgame> = {...formValues}  ;
 
     send2Server.alternateNames = formValues.alternateNames.filter(Boolean);
+    send2Server.userId = user.id;
 
-    void boardgameApi.create<Boardgame>(send2Server);
+    const data = await boardgameApi.create<Boardgame>(send2Server);
+    toast.success(`"${data.name}" has been successfully added!`);
+    void navigate('/')
   }
 
   function handleInputChange(e: React.ChangeEvent<HTMLInputElement>) {
     const inputName = e.target.name;
     const newValues = { ...formValues };
 
-    
+
     type InputObject = z.infer<typeof validationSchema>;
     type InputNamesWithoutNoPlayers = keyof Omit<
       InputObject,

@@ -17,12 +17,15 @@ type MakeRequestParams = RequestInit & {
 
 export class Api {
   public resource: string;
-  private headers = {
-    'Content-Type': 'application/json',
-  };
+  private headers = new Headers();
 
   constructor(resource: string) {
     this.resource = resource;
+    this.headers.append('Content-Type', 'application/json');
+  }
+
+  public setAsAuthRequired(accessToken: string) {
+    this.headers.set('Authorization', `Bearer ${accessToken}`);
   }
 
   private async handleResponse<Data>(this: void, res: Response) {
@@ -66,6 +69,8 @@ export class Api {
       urlEnding += `?${search}`;
     }
 
+    fetchInit.headers = this.headers;
+
     return fetch(`${baseUrl}${urlEnding}`, fetchInit)
       .then(this.handleResponse<R>);
   }
@@ -74,7 +79,6 @@ export class Api {
     return this.makeRequest<R>({
       method: 'POST',
       body: JSON.stringify(body),
-      headers: this.headers,
     });
   }
 
@@ -91,7 +95,6 @@ export class Api {
       id: String(id),
       method: 'PATCH',
       body: JSON.stringify(body),
-      headers: this.headers,
     });
   }
   public remove(id: number) {
