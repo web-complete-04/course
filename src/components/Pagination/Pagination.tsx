@@ -4,6 +4,26 @@ import clsx from "clsx";
 
 import styles from "./Pagination.module.css";
 
+
+function getPageRange(currentPage = 0, totalPages = 0, numberOfVisiblePages = 5) {
+  let firstPage = currentPage - Math.floor(numberOfVisiblePages / 2);
+  let lastPage = currentPage + Math.floor(numberOfVisiblePages / 2);
+
+  if(firstPage < 1) {
+    firstPage = 1;
+  }
+
+  if(lastPage > totalPages) {
+    lastPage = totalPages;
+  }
+
+  const res = [];
+  for (let i = firstPage; i <= lastPage; i++) {
+    res.push(i);
+  }
+  return res;
+}
+
 type Props = {
   totalItemCount: number;
   itemsPerPage?: number;
@@ -31,12 +51,13 @@ export function Pagination({
     onPageChange?.(newPage);
   }, [currentPage, onPageChange]);
 
-  const allPages = Array.from({ length: numberOfPages }, (_, index) => index);
-
+  
   const prevPage = currentPage - 1;
   let nextPage = currentPage + 1;
-
+  
   nextPage = nextPage <= numberOfPages ? nextPage : 0;
+  
+  const allPages = getPageRange(currentPage, numberOfPages);
 
   return (
     <div className={styles.pagination}>
@@ -45,11 +66,11 @@ export function Pagination({
       )}
       {allPages.map((page) => (
         <Link
-          to={`/?page=${String(page + 1)}`}
+          to={`/?page=${String(page)}`}
           key={page}
-          className={clsx({ [styles.active]: page + 1 === currentPage })}
+          className={clsx({ [styles.active]: page === currentPage })}
         >
-          {page + 1}
+          {page}
         </Link>
       ))}
       {Boolean(nextPage) && (
