@@ -4,16 +4,19 @@ import clsx from "clsx";
 
 import styles from "./Pagination.module.css";
 
-
-function getPageRange(currentPage = 0, totalPages = 0, numberOfVisiblePages = 5) {
+function getPageRange(
+  currentPage = 0,
+  totalPages = 0,
+  numberOfVisiblePages = 5,
+) {
   let firstPage = currentPage - Math.floor(numberOfVisiblePages / 2);
   let lastPage = currentPage + Math.floor(numberOfVisiblePages / 2);
 
-  if(firstPage < 1) {
+  if (firstPage < 1) {
     firstPage = 1;
   }
 
-  if(lastPage > totalPages) {
+  if (lastPage > totalPages) {
     lastPage = totalPages;
   }
 
@@ -51,18 +54,22 @@ export function Pagination({
     onPageChange?.(newPage);
   }, [currentPage, onPageChange]);
 
-  
   const prevPage = currentPage - 1;
   let nextPage = currentPage + 1;
-  
+
   nextPage = nextPage <= numberOfPages ? nextPage : 0;
-  
+
   const allPages = getPageRange(currentPage, numberOfPages);
 
   return (
     <div className={styles.pagination}>
       {Boolean(prevPage) && (
         <Link to={`/?page=${String(prevPage)}`}>&laquo; Prev</Link>
+      )}
+      {allPages[0] !== 1 && (
+        <>
+          <Link to={`/?page=1`}>1</Link>...
+        </>
       )}
       {allPages.map((page) => (
         <Link
@@ -73,6 +80,11 @@ export function Pagination({
           {page}
         </Link>
       ))}
+      {allPages.at(-1) !== numberOfPages && (
+        <>
+          ...<Link to={`/?page=${String(numberOfPages)}`}>{numberOfPages}</Link>
+        </>
+      )}
       {Boolean(nextPage) && (
         <Link to={`/?page=${String(nextPage)}`}>Next &raquo;</Link>
       )}
