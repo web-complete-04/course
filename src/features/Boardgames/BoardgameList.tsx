@@ -7,20 +7,28 @@ import styles from './Boardgames.module.css';
 import { Api } from "../../utils/api";
 import { useAuth } from "../Auth/context/useAuth";
 import { Link } from "react-router";
+import { Pagination } from "../../components/Pagination/Pagination";
 
 const boardgames = new Api('boardgames');
 
 export function BoardgameList() {
   const [games, setGames] = useState<Boardgame[] | null>(null);
+  const [noBoardgames, setNoBoardgames] = useState(0);
+  const [page, setPage] = useState(0);
   const {user} = useAuth();
 
   useEffect(() => {
-    void boardgames.readAll<Boardgame[]>(29).then(setGames);
-  }, []);
+    if(!page) return;
+    void boardgames.readAll<Boardgame[]>(page).then((data) => {
+      setGames(data);
+      setNoBoardgames(boardgames.itemCount);
+    });
+  }, [page]);
 
   return (
     <section className={styles.list}>
       <h1>Boardgames</h1>
+      <Pagination totalItemCount={noBoardgames} onPageChange={setPage} />
       { !games && <strong>Loading ...</strong> }
       { games?.map((g) => <BoardgameCard key={g.id} game={g} />) }
 

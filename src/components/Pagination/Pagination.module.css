@@ -1,0 +1,15 @@
+.pagination {
+  display: flex;
+  gap: .5rem;
+
+  grid-column: 1/-1;
+
+  & a {
+    text-decoration: none;
+
+    &.active {
+      color: var(--color-secondary);
+      text-decoration: underline;
+    }
+  }
+}

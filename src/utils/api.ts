@@ -18,6 +18,7 @@ type MakeRequestParams = RequestInit & {
 export class Api {
   public resource: string;
   private headers = new Headers();
+  public itemCount = 0;
 
   constructor(resource: string) {
     this.resource = resource;
@@ -28,9 +29,10 @@ export class Api {
     this.headers.set('Authorization', `Bearer ${accessToken}`);
   }
 
-  private async handleResponse<Data>(this: void, res: Response) {
+  private async handleResponse<Data>(res: Response) {
     const data = (await res.json()) as Data | string;
     if (res.ok && typeof data !== "string") {
+      this.itemCount = Number(res.headers.get('x-total-count'));
       return data;
     }
 
@@ -72,7 +74,7 @@ export class Api {
     fetchInit.headers = this.headers;
 
     return fetch(`${baseUrl}${urlEnding}`, fetchInit)
-      .then(this.handleResponse<R>);
+      .then(this.handleResponse.bind(this)<R>);
   }
 
   public create<R>(body: unknown) {
